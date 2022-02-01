@@ -25,7 +25,7 @@ Breakpoint 1 at 0x87f: file p5final.c, line 31.
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p8final.c:31
+Breakpoint 1, main () at p5final.c:31
 31    n=input();
 (gdb) n
 enter a number=
