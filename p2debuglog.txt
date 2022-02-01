@@ -1,4 +1,4 @@
-gcc -g p4final.c
+gcc -g p2final.c
  ./a.out
 enter value
 10
@@ -24,30 +24,33 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x826: file p4final.c, line 25.
+Breakpoint 1 at 0x826: file p2final.c, line 25.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4final.c:25
+Breakpoint 1, main () at p2final.c:25
 25    x=input();x=10;
 (gdb) n
 enter value
 10
 26    y=input();y=20;
-(gdb) n
-enter value
-20
-27    z=input();z=30;
-(gdb) n
-enter value
-30
-28    big=cmp(x,y,z);;
 (gdb) s
-cmp (a=10, b=20, c=30) at p4final.c:11
-11    if((a>b)&&(b>c))
+input () at p2final.c:3
+3   {
+(gdb) n
+5     printf("enter value\n");
+(gdb) s
+_IO_puts (str=0x55fc1ea00914 "enter value") at ioputs.c:33
+33  ioputs.c: No such file or directory.
 (gdb) c
 Continuing.
+enter value
+10
+enter value
+
+20
 biggest number is 30
-[Inferior 1 (process 206) exited normally]
+[Inferior 1 (process 596) exited normally]
+(gdb) Quit
 (gdb) 

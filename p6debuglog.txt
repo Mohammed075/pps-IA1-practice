@@ -29,16 +29,23 @@ Breakpoint 1, main () at p6final.c:52
 52      {
 (gdb) n
 55          input_two_string(a, b);
-(gdb) n
-Enter a word: reva 
-Enter a word: university
-56          ans = cmp(a, b);
 (gdb) s
-cmp (a=0x7fff898fb2d0 "reva", b=0x7fff898fb2f0 "university")
-    at p6final.c:12
-12          int i=0,result;
+input_two_string (a=0x7ffd11a64fd0 "\001", b=0x7ffd11a64ff0 "0\t@B\331U")
+    at p6final.c:4
+4         printf("Enter a word: ");
+(gdb) n
+5         scanf("%s",a);
+(gdb) n
+Enter a word: reva
+6         printf("Enter a word: ");
+(gdb) n
+7         scanf("%s",b);
+(gdb) n
+Enter a word: university 
+8       }
 (gdb) c
 Continuing.
 university is greater than reva
-[Inferior 1 (process 220) exited normally]
+[Inferior 1 (process 768) exited normally]
+(gdb) Quit
 (gdb) 

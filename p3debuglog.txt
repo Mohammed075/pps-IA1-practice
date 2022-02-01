@@ -1,4 +1,4 @@
-gcc -g p6final.c
+gcc -g p3final.c
  ./a.out
 enter the value of n
 8
@@ -20,21 +20,21 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x818: file p6final.c, line 25.
+Breakpoint 1 at 0x818: file p3final.c, line 25.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6final.c:25
+Breakpoint 1, main () at p3final.c:25
 25      n=input();
 (gdb) n
 enter the value of n
 8
 26      sum=add(n);
 (gdb) s
-add (n=8) at p6final.c:11
+add (n=8) at p3final.c:11
 11   int sum=0,i;
 (gdb) c
 Continuing.
-sum is 36[Inferior 1 (process 278) exited normally]
+sum is 36[Inferior 1 (process 682) exited normally]
 (gdb) 
