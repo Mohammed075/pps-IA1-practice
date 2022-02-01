@@ -1,10 +1,8 @@
-gcc -g p3final.c
+gcc -g p6final.c
  ./a.out
-enter value 
-5
-enter value 
-6
-5+6=11 
+enter the value of n
+8
+sum is 36 
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -22,23 +20,21 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x7c5: file p3final.c, line 22.
+Breakpoint 1 at 0x818: file p6final.c, line 25.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p3final.c:22
-22    a=input();
+Breakpoint 1, main () at p6final.c:25
+25      n=input();
 (gdb) n
-enter value 5
-23    b=input();
-(gdb) n
-enter value 6
-24    c=add(a,b);
+enter the value of n
+8
+26      sum=add(n);
 (gdb) s
-add (a=5, b=6) at p3final.c:12
-12    c=a+b;
+add (n=8) at p6final.c:11
+11   int sum=0,i;
 (gdb) c
 Continuing.
-5+6=11[Inferior 1 (process 130) exited normally]
+sum is 36[Inferior 1 (process 278) exited normally]
 (gdb) 

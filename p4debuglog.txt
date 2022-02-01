@@ -1,14 +1,26 @@
-gcc -g p4final.c
+gcc -g p7final.c
  ./a.out
-enter value
-10
-enter value
-20
-enter value
-30
-biggest number is 30
+enter n
+8
+enter array number
+2
+enter array number
+3
+enter array number
+4
+enter array number
+5
+enter array number
+6
+enter array number
+7
+enter array number
+8
+enter array number
+9
+sum is 44 
  gdb a.out
-GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+'GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
@@ -24,30 +36,39 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x826: file p4final.c, line 25.
+Breakpoint 1 at 0x88a: file p7final.c, line 32.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4final.c:25
-25    x=input();x=10;
+Breakpoint 1, main () at p7final.c:32
+32  {
 (gdb) n
-enter value
-10
-26    y=input();y=20;
+34    n=input();
 (gdb) n
-enter value
-20
-27    z=input();z=30;
-(gdb) n
-enter value
-30
-28    big=cmp(x,y,z);;
+enter n
+8
+35    aray(n,a);
 (gdb) s
-cmp (a=10, b=20, c=30) at p4final.c:11
-11    if((a>b)&&(b>c))
+aray (n=8, a=0x7ffe7983a8f0) at p7final.c:12
+12    for(i=0;i<n;i++)
 (gdb) c
 Continuing.
-biggest number is 30
-[Inferior 1 (process 206) exited normally]
+enter array number
+2
+enter array number
+3
+enter array number
+4
+enter array number
+5
+enter array number
+6
+enter array number
+7
+enter array number
+8
+enter array number
+9
+sum is 44[Inferior 1 (process 333) exited normally]
 (gdb) 

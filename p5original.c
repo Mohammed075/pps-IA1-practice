@@ -1,27 +1,35 @@
-#include <stdio.h>
-int input(int *a,int *b,int*c)
+#include<stdio.h>
+float input()
 {
-  printf("enter 3 numbers\n");
-  scanf("%d%d%d",a,b,c);
+  float n;
+  printf("enter a number=\n");
+  scanf("%f",&n);
+  return n;
 }
-int cmp (int a,int b,int c,int *big)
+float my_sqrt(float n)
 {
-  if ((a>b)&&(a>c))
-  *big=a;
-  else if((b>a)&&(b>c))
-  *big=b;
-  else
-  *big=c;
+  float sqrt_result;
+  sqrt_result=n/2;
+  float root=0;
+  while(sqrt_result!=root)
+  {
+   root=sqrt_result;
+   sqrt_result=(n/root+root)/2;
+  }
+  return sqrt_result;
 }
-int output(int big)
+void output(float n, float sqrt_result)
 {
-  printf("biggest number is %d",big);
+  int j,k;
+  j=n;
+  k=sqrt_result;
+  printf("square root of %d=%d\n",j,k);
 }
-int main ()
+int main()
 {
-  int x,y,z,big;
-  input(&x,&y,&z);
-  cmp(x,y,z,&big);
-  output(big);
+  float n,sqrt_result;
+  n=input();
+  sqrt_result=my_sqrt(n);
+  output(n,sqrt_result);
   return 0;
 }

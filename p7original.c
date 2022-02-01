@@ -1,39 +1,41 @@
-#include<stdio.h>
-int input()
+#include <stdio.h>
+
+typedef struct Complex
 {
-  int n;
-  printf("enter n\n");
-  scanf("%d",&n);
-  return n;
-}
-int aray(int n,int a[10])
+    float real;
+    float Imaginary;
+}Complex;
+
+Complex input()
 {
-  int i;
-  for(i=0;i<n;i++)
-  { 
-    printf("enter array number\n");
-    scanf("%d",&a[i]);
-  }
+    Complex c;
+    printf("enter the Real part: ");
+    scanf("%f", &c.real);
+    printf("enter the Imaginary part: ");
+    scanf("%f", &c.Imaginary);
+    return c;
 }
-int add(int n,int a[10])
+
+Complex add(Complex a, Complex b)
 {
-  int i,sum=0;
-  for(i=0;i<n;i++)
-  {
-  sum=sum+a[i];
+    Complex sum;
+    sum.real = a.real + b.real;
+    sum.Imaginary = a.Imaginary + b.Imaginary;
+    return sum;
 }
-return sum;
-}
-int output(int sum)
+
+void output(Complex a,Complex b,Complex sum)
 {
-  printf("sum is %d",sum);
+ printf("The sum of %0.1f + %0.1fi and %0.1f + %0.1fi is %0.1f + %0.1fi\n",a.real,a.Imaginary,b.real,b.Imaginary,sum.real,sum.Imaginary);
 }
+
 int main()
 {
-  int n,a[10],sum,i;
-  n=input();
-  aray(n,a);
-  sum=add(n,a);
-  output(sum);
-  return 0;
+    Complex c1, c2, sum;
+    c1= input();
+    c2= input();
+    sum = add(c1,c2);
+    output(c1,c2,sum);
+    return 0;
 }
+

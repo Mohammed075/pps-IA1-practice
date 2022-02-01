@@ -1,8 +1,8 @@
 gcc -g p6final.c
  ./a.out
-enter the value of n
-8
-sum is 36 
+Enter a word: reva
+Enter a word: university
+university is greater than reva
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -20,21 +20,25 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x818: file p6final.c, line 25.
+Breakpoint 1 at 0x8c0: file p6final.c, line 52.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6final.c:25
-25      n=input();
+Breakpoint 1, main () at p6final.c:52
+52      {
 (gdb) n
-enter the value of n
-8
-26      sum=add(n);
+55          input_two_string(a, b);
+(gdb) n
+Enter a word: reva 
+Enter a word: university
+56          ans = cmp(a, b);
 (gdb) s
-add (n=8) at p6final.c:11
-11   int sum=0,i;
+cmp (a=0x7fff898fb2d0 "reva", b=0x7fff898fb2f0 "university")
+    at p6final.c:12
+12          int i=0,result;
 (gdb) c
 Continuing.
-sum is 36[Inferior 1 (process 278) exited normally]
+university is greater than reva
+[Inferior 1 (process 220) exited normally]
 (gdb) 

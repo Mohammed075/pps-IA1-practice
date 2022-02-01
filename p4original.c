@@ -1,30 +1,39 @@
-#include <stdio.h>
+#include<stdio.h>
 int input()
 {
-  int a;
-  printf("enter value\n");
-  scanf("%d",&a);
-  return a;
+  int n;
+  printf("enter n\n");
+  scanf("%d",&n);
+  return n;
 }
-int cmp (int a,int b,int c)
+int aray(int n,int a[10])
 {
-  if((a>b)&&(b>c))
-  return a;
-  else if((b>a)&&(b>c))
-  return b;
-  else
-  return c;
+  int i;
+  for(i=0;i<n;i++)
+  { 
+    printf("enter array number\n");
+    scanf("%d",&a[i]);
+  }
 }
-int output(int big)
+int add(int n,int a[10])
 {
-  printf("biggest number is %d\n",big);
+  int i,sum=0;
+  for(i=0;i<n;i++)
+  {
+  sum=sum+a[i];
+}
+return sum;
+}
+int output(int sum)
+{
+  printf("sum is %d",sum);
 }
 int main()
 {
-  int x,y,z,big;
-  x=input();x=10;
-  y=input();y=20;
-  z=input();z=30;
-  big=cmp(x,y,z);;
-  output(big);
+  int n,a[10],sum,i;
+  n=input();
+  aray(n,a);
+  sum=add(n,a);
+  output(sum);
+  return 0;
 }
